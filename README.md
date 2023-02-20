@@ -27,7 +27,7 @@ We can use this dry contact to close a zigbee switch that triggers a Home Assist
 
 ![assembly](assembly.jpg)
 
-If you do not have a pre-made cable, you can use the `Gazpar-MX44-Connector.3mf` with pre-configured support, originally from[^2]. Just add Dupont female connectors and some hot glue to secure them.
+If you do not have a pre-made cable, you can use the `Gazpar-MX44-Connector.3mf` file for prusaslicer with pre-configured supports, originally from[^2]. Just add Dupont female connectors and some hot glue to secure them.
 
 Just solder the cable across a switch of your Zibgee button. Plug the connector into the side of your meter.
 
@@ -71,9 +71,9 @@ automation:
 
 #### Volume sensor
 
-This will create a sensor in cubic meters as Home assistant will require it for the gas utility meter.
+This will create a sensor in cubic meters as Home assistant will require it for the gas utility meter and the dashboard.
 
-```
+```yaml
 template:
   - sensor:
     - name: "Gas Volume"
@@ -89,7 +89,7 @@ You can now add it to your energy dashboard!
 
 Used for stats:
 
-```
+```yaml
 utility_meter:
   gas_total_usage_daily:
     source: sensor.gas_volume
